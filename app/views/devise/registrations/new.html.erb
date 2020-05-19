@@ -4,9 +4,12 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email,
+  <%= f.input :name,
                 required: true,
                 autofocus: true,
+                input_html: { autocomplete: "name" }%>
+    <%= f.input :email,
+                required: true,
                 input_html: { autocomplete: "email" }%>
     <%= f.input :password,
                 required: true,
@@ -18,7 +21,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up", class: "btn btn-outline-success my-2 my-sm-0" %>
   </div>
 <% end %>
 
