@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Posts</h1>
+
+
+    <% @posts.each do |post| %>
+
+    <div class="card mt-3">
+  <div class="card-body">
+    <h5 class="card-title"><%= post.title %></h5>
+    <% if user_signed_in? %>
+    <h6 class="card-subtitle mb-2 text-muted"><%= post.user.name %></h6>
+    <% end %>
+    <p class="card-text"><%= post.body %></p>
+  </div>
+</div>
+    <% end %>
+  
+
+<br>
+
+<%= link_to 'New Post', new_post_path, class: "btn btn-outline-success my-2 my-sm-0" %>
